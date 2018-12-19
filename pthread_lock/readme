@@ -1,0 +1,5 @@
+gcc counter.c -fPIC -shared -o libcounter.so -pthread
+gcc list.c -fPIC -shared -o liblist.so -pthread
+gcc hash.c -fPIC -shared -o libhash.so -pthread
+export LD_LIBRARY_PATH=/home/eddie/桌面/oslab5/pthread_lock
+gcc mymain.c -o myprogram -lcounter -llist -lhash -L. -pthread
